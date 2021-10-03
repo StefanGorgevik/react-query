@@ -9,6 +9,9 @@ const fetchPeople = async () => {
 
 const People = () => {
   const {data, status} = useQuery('people', fetchPeople); //key for the name of the data, function(async) to get data
+
+  //after the data is fetch it is cached and every time we open the page the data is fetched again but it is compared to the cache
+  //if there are changes in the cache the data will be updated
   console.log(data, status)
   return (
     <div>
